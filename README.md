@@ -2,7 +2,7 @@
 adminsys project 2015 epitech
 
 # packages
-apt-get update ; apt-get install -y emacs sudo nfs-kernel-server samba isc-dhcp-server bind9 bind9utils bind9-doc
+apt-get update ; apt-get install -y emacs whois sudo nfs-kernel-server samba isc-dhcp-server bind9 bind9utils bind9-doc
 
 # alias
 Se log en root; installer emacs:
@@ -17,9 +17,7 @@ useradd --home /home/antoine --gid users --password `mkpasswd antoine42` -m -k /
 useradd --home /home/zouhir --gid users --password `mkpasswd zouhir42` -m -k /etc/skel -s /bin/bash zouhir;
 
 # configurer dns
-## ipv4
-echo -e "RESOLVCONF=no\nOPTIONS=\"-4 -u bind\"" > /etc/default/bind9;
-
+http://webadonf.net/2011/03/configurer-un-serveur-dns-avec-bind9-sur-debian-squeeze/
 
 # configurer dhcp
 
