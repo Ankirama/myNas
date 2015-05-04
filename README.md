@@ -22,6 +22,9 @@ http://webadonf.net/2011/03/configurer-un-serveur-dns-avec-bind9-sur-debian-sque
 # configurer dhcp
 http://webadonf.net/2011/04/configurer-le-service-dhcp-sous-debian-squeeze/
 
+# lier dns + dhcp
+http://webadonf.net/2011/04/gestion-dynamique-du-dns-avec-bind9-sous-debian-squeeze/
+
 # configurer ssh
 
 # configurer / installer transmission
