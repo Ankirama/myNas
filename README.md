@@ -1,10 +1,12 @@
 # myNas
 adminsys project 2015 epitech
 
-# start
+# packages
+apt-get install -y emacs sudo nfs-kernel-server samba
+
+# alias
 Se log en root; installer emacs:
-apt-get install -y emacs; echo "alias ne='emacs'" >> /root/.bashrc; source /root/.bashrc;
-apt-get install sudo;
+echo "alias ne='emacs'" >> /root/.bashrc; source /root/.bashrc;
 
 # creer users / set les droits
 useradd --home /home/admin --password `mkpasswd admin42` -m -k /etc/skel -s /bin/bash admin; usermod -G admin admin; echo "admin ALL=(ALL:ALL) ALL" >> /etc/sudoers;
@@ -15,3 +17,7 @@ useradd --home /home/antoine --gid users --password `mkpasswd antoine42` -m -k /
 useradd --home /home/zouhir --gid users --password `mkpasswd zouhir42` -m -k /etc/skel -s /bin/bash zouhir;
 
 # configurer ssh
+
+# configurer / installer transmission
+
+# configurer ftp
