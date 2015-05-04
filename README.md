@@ -17,10 +17,10 @@ useradd --home /home/antoine --gid users --password `mkpasswd antoine42` -m -k /
 useradd --home /home/zouhir --gid users --password `mkpasswd zouhir42` -m -k /etc/skel -s /bin/bash zouhir;
 
 # configurer dns
-http://webadonf.net/2011/03/configurer-un-serveur-dns-avec-bind9-sur-debian-squeeze/
+http://webadonf.net/2011/03/configurer-un-serveur-dns-avec-bind9-sur-debian-squeeze/ (edit ip)
 
 # configurer dhcp
-
+http://webadonf.net/2011/04/configurer-le-service-dhcp-sous-debian-squeeze/
 
 # configurer ssh
 
