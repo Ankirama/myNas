@@ -30,3 +30,6 @@ http://webadonf.net/2011/04/gestion-dynamique-du-dns-avec-bind9-sous-debian-sque
 # configurer / installer transmission
 
 # configurer ftp
+
+# openmediavault raspberry:
+http://www.htpcguides.com/install-openmediavault-raspberry-pi-nas-server-minibian/
