@@ -33,3 +33,5 @@ http://webadonf.net/2011/04/gestion-dynamique-du-dns-avec-bind9-sous-debian-sque
 
 # openmediavault raspberry:
 http://www.htpcguides.com/install-openmediavault-raspberry-pi-nas-server-minibian/
+http://www.pintaric.net/index.php?post/2013/05/10/QNap-TS-109-%3A-Wheezy-et-OpenMediaVault
+http://forums.openmediavault.org/index.php/Thread/4541-Raspberry/
