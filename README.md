@@ -2,7 +2,7 @@
 adminsys project 2015 epitech
 
 #openmediavault
-Fais le cafe: http://www.openmediavault.org
+Fait le cafe: http://www.openmediavault.org
 
 # packages
 apt-get update ; apt-get install -y emacs whois sudo nfs-kernel-server samba isc-dhcp-server bind9 bind9utils bind9-doc
