@@ -47,3 +47,6 @@ http://gamerz0ne.fr/2015/02/16/installer-un-serveur-nas-avec-openmediavault-omv/
 http://www.eteknix.com/everybody-can-nas-beginners-guide-openmediavault/5/
 http://en.jose-crispim.pt/artigos/armazenamento/armaz_art/06_openmediavault.html
 http://www.yvesmasur.ch/articles/NAS/NAS-installation.pdf
+
+# interface web
+http://www.it-connect.fr/ajaxplorer-un-gestionnaire-de-fichiers-en-ligne-et-a-la-maison/#IV_Accs_l8217interface_d8217AjaXplorer
