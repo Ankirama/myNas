@@ -41,3 +41,9 @@ http://forums.openmediavault.org/index.php/Thread/4541-Raspberry/
 
 # wifi + ethernet
 http://raspberrypi.stackexchange.com/questions/8851/setting-up-wifi-and-ethernet
+
+# set up openmediavault
+http://gamerz0ne.fr/2015/02/16/installer-un-serveur-nas-avec-openmediavault-omv/
+http://www.eteknix.com/everybody-can-nas-beginners-guide-openmediavault/5/
+http://en.jose-crispim.pt/artigos/armazenamento/armaz_art/06_openmediavault.html
+http://www.yvesmasur.ch/articles/NAS/NAS-installation.pdf
