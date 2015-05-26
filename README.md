@@ -26,6 +26,8 @@ useradd --home /home/zouhir --gid users --password `mkpasswd zouhir42` -m -k /et
 http://webadonf.net/2011/03/configurer-un-serveur-dns-avec-bind9-sur-debian-squeeze/ (edit ip)
 
 # configurer dhcp
+ajouter network adaptater (bridged)
+dans /etc/network/interfaces --> http://pastebin.com/QvfW7ExU
 http://webadonf.net/2011/04/configurer-le-service-dhcp-sous-debian-squeeze/
 
 # lier dns + dhcp
