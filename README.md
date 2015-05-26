@@ -43,6 +43,7 @@ fdisk /dev/sdb (en supposant que sdb existe fdp.)
 n, *enter, *enter, *enter
 w
 /deb/sdb1 doit maintenant etre present (si non, c'est con.)
+https://www.facebook.com/l.php?u=http%3A%2F%2Faskubuntu.com%2Fquestions%2F154180%2Fhow-to-mount-a-new-drive-on-startup&h=BAQGEycBH
 
 # configurer / installer transmission
 
