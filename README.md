@@ -82,3 +82,6 @@ ajouter:
 HideFiles ^\..*
 </Directory>
 
+# configurer mail server
+https://www.isalo.org/wiki.debian-fr/Installation_sur_une_Squeeze_d'un_serveur_mail_complet_(Postfix_Postfixadmin_Dovecot_Mysql_Amavisd-new_Spamassassin_Clamav_Postgrey_Squirrelmail_Roundcube)_avec_gestion_des_filtres_Imap_et_des_quotas
+
