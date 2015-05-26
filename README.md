@@ -41,6 +41,7 @@ service sshd reload
 # configurer / installer transmission
 
 # configurer ftp
+https://www.debian-administration.org/article/228/Setting_up_an_FTP_server_on_Debian
 
 # openmediavault raspberry:
 http://www.htpcguides.com/install-openmediavault-raspberry-pi-nas-server-minibian/
