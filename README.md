@@ -34,6 +34,7 @@ http://webadonf.net/2011/04/configurer-le-service-dhcp-sous-debian-squeeze/
 http://webadonf.net/2011/04/gestion-dynamique-du-dns-avec-bind9-sous-debian-squeeze/
 
 # configurer ssh
+configurer /etc/ssh/sshd_conf
 
 # configurer / installer transmission
 
