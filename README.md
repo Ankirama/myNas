@@ -75,3 +75,10 @@ update:
 usermod -G antoine antoine; usermod -G zouhir zouhir; usermod -G papy papy;
 cd /mynas; chown admin:admin admin; chown antoine:antoine antoine; chown papy:papy papy; chown zouhir:zouhir zouhir;
 chmod g+rwx antoine; chmod g+rwx papy; chmod g+rwx zouhir;
+
+# changements /etc/proftpd/proftpd.conf
+ajouter: 
+<Directory />
+HideFiles ^\..*
+</Directory>
+
