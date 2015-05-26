@@ -7,6 +7,9 @@ Fait le cafe: http://www.openmediavault.org
 # packages
 apt-get update ; apt-get install -y emacs whois sudo nfs-kernel-server samba isc-dhcp-server bind9 bind9utils bind9-doc
 
+# lc_all problem:
+http://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue
+
 # alias
 Se log en root; installer emacs:
 echo "alias ne='emacs'" >> /root/.bashrc; source /root/.bashrc;
