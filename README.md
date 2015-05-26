@@ -66,3 +66,12 @@ http://www.yvesmasur.ch/articles/NAS/NAS-installation.pdf
 
 # interface web
 http://www.it-connect.fr/ajaxplorer-un-gestionnaire-de-fichiers-en-ligne-et-a-la-maison/#IV_Accs_l8217interface_d8217AjaXplorer
+
+--------------------------------------------------
+update:
+--------------------------------------------------
+
+# changements
+usermod -G antoine antoine; usermod -G zouhir zouhir; usermod -G papy papy;
+cd /mynas; chown admin:admin admin; chown antoine:antoine antoine; chown papy:papy papy; chown zouhir:zouhir zouhir;
+chmod g+rwx antoine; chmod g+rwx papy; chmod g+rwx zouhir;
