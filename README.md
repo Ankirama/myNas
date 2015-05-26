@@ -38,6 +38,12 @@ configurer /etc/ssh/sshd_conf  -> port 4224
                                -> PermitRootLogin no
 service sshd reload
 
+# create / mount new disk
+fdisk /dev/sdb (en supposant que sdb existe fdp.)
+n, *enter, *enter, *enter
+w
+/deb/sdb1 doit maintenant etre present (si non, c'est con.)
+
 # configurer / installer transmission
 
 # configurer ftp
