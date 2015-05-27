@@ -1,9 +1,6 @@
 # myNas
 adminsys project 2015 epitech
 
-#openmediavault
-Fait le cafe: http://www.openmediavault.org
-
 # packages
 apt-get update ; apt-get install -y emacs whois sudo nfs-kernel-server samba isc-dhcp-server bind9 bind9utils bind9-doc
 
@@ -55,10 +52,10 @@ http://www.htpcguides.com/install-openmediavault-raspberry-pi-nas-server-minibia
 http://www.pintaric.net/index.php?post/2013/05/10/QNap-TS-109-%3A-Wheezy-et-OpenMediaVault
 http://forums.openmediavault.org/index.php/Thread/4541-Raspberry/
 
-# wifi + ethernet
+# wifi + ethernet (ne pas prendre en compte, special rpi)
 http://raspberrypi.stackexchange.com/questions/8851/setting-up-wifi-and-ethernet
 
-# set up openmediavault
+# set up openmediavault (ne pas prendre en compte)
 http://gamerz0ne.fr/2015/02/16/installer-un-serveur-nas-avec-openmediavault-omv/
 http://www.eteknix.com/everybody-can-nas-beginners-guide-openmediavault/5/
 http://en.jose-crispim.pt/artigos/armazenamento/armaz_art/06_openmediavault.html
