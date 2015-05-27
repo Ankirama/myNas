@@ -76,7 +76,7 @@ chmod g+rwx antoine; chmod g+rwx papy; chmod g+rwx zouhir;
 # changements /etc/proftpd/proftpd.conf
 ajouter: 
 \<Directory /\>
-HideFiles ^\..*
+HideFiles ^\\..*
 \</Directory\>
 
 # autoban bruteforce/ddos
