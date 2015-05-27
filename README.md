@@ -75,9 +75,9 @@ chmod g+rwx antoine; chmod g+rwx papy; chmod g+rwx zouhir;
 
 # changements /etc/proftpd/proftpd.conf
 ajouter: 
-<Directory />
+\<Directory /\>
 HideFiles ^\..*
-</Directory>
+\</Directory\>
 
 # autoban bruteforce/ddos
 http://blog.nicolargo.com/2012/02/proteger-son-serveur-en-utilisant-fail2ban.html
