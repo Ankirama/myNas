@@ -82,6 +82,20 @@ ajouter:
 HideFiles ^\..*
 </Directory>
 
+# autoban bruteforce/ddos
+http://blog.nicolargo.com/2012/02/proteger-son-serveur-en-utilisant-fail2ban.html
+apt-get install fail2ban
+ne /etc/fail2ban/jail.conf:
+    chercher [ssh] puis rajouter: 
+        action = iptables[name=SSH, port=ssh, protocol=tcp]
+        maxretry = 3 (au lieu de 6)
+        bantime = 900 (en secondes)
+
 # configurer mail server
 https://www.isalo.org/wiki.debian-fr/Installation_sur_une_Squeeze_d'un_serveur_mail_complet_(Postfix_Postfixadmin_Dovecot_Mysql_Amavisd-new_Spamassassin_Clamav_Postgrey_Squirrelmail_Roundcube)_avec_gestion_des_filtres_Imap_et_des_quotas
+
+apt-get install -y mysql-server 
+ne /etc/bind/db.mynas --> 
+smtp            IN      A       10.10.100.24
+mynas.         IN      MX      10      smtp
 
