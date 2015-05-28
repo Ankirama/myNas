@@ -1,3 +1,9 @@
+__________________________
+Le README.md n'est pas a jour et contient surement des incoherences car j'ai par moment oublie d'update ce que je faisais.
+Si vous avez le moindre probleme me contacter (mar_b@epitech.eu)
+J'essayerai de le mettre a jour plus tard si j'ai du temps
+__________________________
+
 # myNas
 adminsys project 2015 epitech
 
@@ -143,3 +149,9 @@ cd /etc/apache2/sites-available
 pour chaque virtualhost creer un fichier, voici ma liste:
   http://pastebin.com/7pgXcML5
   comprend transmission, subsonic, ajenti, h5ai
+
+# h5ai
+http://yaui.me/how-to-set-up-apache-and-h5ai-in-raspi/
+apt-get install -y apache2-doc apache2-utils libapache2-mod-php5 php5 php-pear php5-xcache php5-mysql mysql-server mysql-client
+suivre le tuto sauf pour le Vhost, ne pas mettre le Directory Index ... mais:
+emacs /etc/apache2/mods-available/dir.conf puis rajouter /_h5ai/server/php/index.php
