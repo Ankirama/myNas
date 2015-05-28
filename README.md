@@ -42,8 +42,6 @@ w
 /deb/sdb1 doit maintenant etre present (si non, c'est con.)
 http://askubuntu.com/questions/154180/how-to-mount-a-new-drive-on-startup
 
-# configurer / installer transmission
-
 # configurer ftp
 https://www.debian-administration.org/article/228/Setting_up_an_FTP_server_on_Debian
 
@@ -68,7 +66,7 @@ http://www.it-connect.fr/ajaxplorer-un-gestionnaire-de-fichiers-en-ligne-et-a-la
 update:
 --------------------------------------------------
 
-# changements
+# changements (tout ce qui suit ou la plupart des chsoes est a faire avec sudo, ne pas le faire en root a cause des droits generes)
 usermod -G antoine antoine; usermod -G zouhir zouhir; usermod -G papy papy;
 cd /mynas; chown admin:admin admin; chown antoine:antoine antoine; chown papy:papy papy; chown zouhir:zouhir zouhir;
 chmod g+rwx antoine; chmod g+rwx papy; chmod g+rwx zouhir;
@@ -99,6 +97,40 @@ mynas.         IN      MX      10      smtp
 
 # configurer control panel (ajenti)
 wget -O- https://raw.github.com/Eugeny/ajenti/master/scripts/install-debian.sh | sh
+changer password
+aller dans plugings: installer ctdb
+                     installer S.M.A.R.T.
+aller dans samba: puis configurer (je dois le faire)
 
+# quota (limit size user directory)
+https://www.debian-administration.org/article/47/Limiting_your_users_use_of_disk_space_with_quotas
 
 # configurer samba
+http://www.linux-france.org/article/serveur/samba-mhp/smb-conf.htm
+http://www.commentcamarche.net/contents/1027-mise-en-place-de-samba-sous-linux
+
+# configurer quota:
+apt-get install -y quota libnet-ldap-perl
+ne /etc/fstab --> la ligne ou y'a mynas (derniere normalement) changer defaults par defaults,usrquota
+(reboot ou mount -o remount /mynas)
+setquota -u antoine 500000 500000 0 0 /dev/sdb1; setquota -u papy 500000 500000 0 0 /dev/sdb1; setquota -u zouhir 500000 500000 0 0 /dev/sdb1; setquota -u admin 1000000 1000000 0 0 /dev/sdb1;
+
+# configurer / installer transmission
+https://www.guillaume-leduc.fr/la-seedbox-facile-sous-debian-avec-transmission.html (methode sale / a chier)
+http://voidandany.free.fr/index.php/executer-transmission-avec-lutilisateur-de-son-choix-et-deplacer-son-fichier-de-configuration-vers-home/ (tres performant, je remercie l'auteur)
+apt-get install -y transmission-deamon;
+service transmission-daemon stop;
+emacs /etc/default/transmission-daemon; --> commenter OPTIONS
+emacs /etc/init.d/transmission-daemon; --> changer USER=debian.. par USER=admin
+mkdir -p ~/.config/transmission-daemon;
+cp /etc/transmission-daemon/settings.json ~/.config/transmission-daemon/;
+chown admin:admin -R ~/.config;
+mkdir /mynas/admin/downloads
+emacs ~/.config/transmission-daemon/settings.json; -->
+  "download-dir": "/mynas/admin/downloads"
+  "rpc-enabled": true
+  "rpc-password": "tonpassword"
+  "rpc-username": "admin ou ce que tu veux"
+  "rpc-whitelist-enabled": false
+
+# configurer subsonic
