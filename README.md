@@ -155,3 +155,7 @@ http://yaui.me/how-to-set-up-apache-and-h5ai-in-raspi/
 apt-get install -y apache2-doc apache2-utils libapache2-mod-php5 php5 php-pear php5-xcache php5-mysql mysql-server mysql-client
 suivre le tuto sauf pour le Vhost, ne pas mettre le Directory Index ... mais:
 emacs /etc/apache2/mods-available/dir.conf puis rajouter /_h5ai/server/php/index.php
+
+
+# git-server
+https://www.digitalocean.com/community/tutorials/how-to-install-git-on-debian-7
