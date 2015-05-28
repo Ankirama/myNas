@@ -2,7 +2,7 @@
 adminsys project 2015 epitech
 
 # packages
-apt-get update ; apt-get install -y emacs whois sudo nfs-kernel-server samba isc-dhcp-server bind9 bind9utils bind9-doc
+apt-get update ; apt-get install -y emacs whois sudo nfs-kernel-server samba isc-dhcp-server bind9 bind9utils bind9-doc bzip2
 
 # lc_all problem:
 http://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue
@@ -134,3 +134,6 @@ emacs ~/.config/transmission-daemon/settings.json; -->
   "rpc-whitelist-enabled": false
 
 # configurer subsonic
+http://www.subsonic.org/pages/installation.jsp#debian
+apt-get install openjdk-7-jre; wget http://downloads.sourceforge.net/project/subsonic/subsonic/5.2.1/subsonic-5.2.1.deb?r=http%3A%2F%2Fwww.subsonic.org%2Fpages%2Fdownload2.jsp%3Ftarget%3Dsubsonic-5.2.1.deb&ts=1432778765&use_mirror=vorboss && mv subsonic-5.2.1.deb?r=http:%2F%2Fwww.subsonic.org%2Fpages%2Fdownload2.jsp?target=subsonic-5.2.1.deb&ts=1432778765&use_mirror=vorboss subsonic.deb && sudo dpkg -i subsonic.deb;
+changer reglages / parametres en fonction des gouts
