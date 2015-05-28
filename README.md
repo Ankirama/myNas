@@ -137,3 +137,9 @@ emacs ~/.config/transmission-daemon/settings.json; -->
 http://www.subsonic.org/pages/installation.jsp#debian
 apt-get install openjdk-7-jre; wget http://downloads.sourceforge.net/project/subsonic/subsonic/5.2.1/subsonic-5.2.1.deb?r=http%3A%2F%2Fwww.subsonic.org%2Fpages%2Fdownload2.jsp%3Ftarget%3Dsubsonic-5.2.1.deb&ts=1432778765&use_mirror=vorboss && mv subsonic-5.2.1.deb?r=http:%2F%2Fwww.subsonic.org%2Fpages%2Fdownload2.jsp?target=subsonic-5.2.1.deb&ts=1432778765&use_mirror=vorboss subsonic.deb && sudo dpkg -i subsonic.deb;
 changer reglages / parametres en fonction des gouts
+
+# subdomain / virtualhost
+cd /etc/apache2/sites-available
+pour chaque virtualhost creer un fichier, voici ma liste:
+  http://pastebin.com/7pgXcML5
+  comprend transmission, subsonic, ajenti, h5ai
