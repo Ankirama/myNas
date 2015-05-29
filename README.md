@@ -165,3 +165,10 @@ https://www.sheevaboite.fr/articles/installer-son-propre-serveur-git-partie-2
 # gitlab
 http://eserdeniz.fr/articles/view/4/installer-gitlab-sous-debian-7-avec-nginx-et-mysql
 http://stackoverflow.com/questions/22825497/installing-gitlab-missing-modernizer
+
+# webalizer
+http://www.debianhelp.co.uk/webalizer.htm
+
+# mediawiki
+https://www.rosehosting.com/blog/how-to-install-mediawiki-on-debian-wheezy/
+http://www.mediawiki.org/wiki/Manual:Running_MediaWiki_on_Ubuntu/fr
