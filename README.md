@@ -159,3 +159,9 @@ emacs /etc/apache2/mods-available/dir.conf puis rajouter /_h5ai/server/php/index
 
 # git-server
 https://www.digitalocean.com/community/tutorials/how-to-install-git-on-debian-7
+https://www.sheevaboite.fr/articles/installer-serveur-git-auto-heberge-partie-1
+https://www.sheevaboite.fr/articles/installer-son-propre-serveur-git-partie-2
+
+#gitlab
+http://eserdeniz.fr/articles/view/4/installer-gitlab-sous-debian-7-avec-nginx-et-mysql
+http://stackoverflow.com/questions/22825497/installing-gitlab-missing-modernizer
