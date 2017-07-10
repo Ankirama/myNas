@@ -53,7 +53,7 @@ w
 /deb/sdb1 doit maintenant etre present (si non, c'est con.)
 http://askubuntu.com/questions/154180/how-to-mount-a-new-drive-on-startup
 
-# configurer ftp
+# configurer ftp (deprecated, sftp c'est mieux plus simple / mieux)
 https://www.debian-administration.org/article/228/Setting_up_an_FTP_server_on_Debian
 
 # openmediavault raspberry:
@@ -84,7 +84,7 @@ cd /mynas; chown admin:admin admin; chown antoine:antoine antoine; chown papy:pa
 chmod g+rwx antoine; chmod g+rwx papy; chmod g+rwx zouhir;
 ```
 
-# changements /etc/proftpd/proftpd.conf
+# changements /etc/proftpd/proftpd.conf (deprecated, sftp c'est mieux plus simple / mieux)
 ajouter:
 \<Directory /\>
 HideFiles ^\\..*
