@@ -18,12 +18,15 @@ Se log en root; installer emacs:
 echo "alias ne='emacs'" >> /root/.bashrc; source /root/.bashrc;
 
 # creer users / set les droits
+```
 useradd --home /home/admin --password `mkpasswd admin42` -m -k /etc/skel -s /bin/bash admin; usermod -G admin admin; echo "admin ALL=(ALL:ALL) ALL" >> /etc/sudoers;
-
+```
+```
 groupadd users;
 useradd --home /home/papy --gid users --password `mkpasswd papy42` -m -k /etc/skel -s /bin/bash papy;
 useradd --home /home/antoine --gid users --password `mkpasswd antoine42` -m -k /etc/skel -s /bin/bash antoine;
 useradd --home /home/zouhir --gid users --password `mkpasswd zouhir42` -m -k /etc/skel -s /bin/bash zouhir;
+```
 
 # configurer dns
 http://webadonf.net/2011/03/configurer-un-serveur-dns-avec-bind9-sur-debian-squeeze/ (edit ip)
@@ -42,9 +45,11 @@ configurer /etc/ssh/sshd_conf  -> port 4224
 service sshd reload
 
 # create / mount new disk
+```
 fdisk /dev/sdb (en supposant que sdb existe fdp.)
 n, *enter, *enter, *enter
 w
+```
 /deb/sdb1 doit maintenant etre present (si non, c'est con.)
 http://askubuntu.com/questions/154180/how-to-mount-a-new-drive-on-startup
 
@@ -73,9 +78,11 @@ update:
 --------------------------------------------------
 
 # changements (tout ce qui suit ou la plupart des chsoes est a faire avec sudo, ne pas le faire en root a cause des droits generes)
+```
 usermod -G antoine antoine; usermod -G zouhir zouhir; usermod -G papy papy;
 cd /mynas; chown admin:admin admin; chown antoine:antoine antoine; chown papy:papy papy; chown zouhir:zouhir zouhir;
 chmod g+rwx antoine; chmod g+rwx papy; chmod g+rwx zouhir;
+```
 
 # changements /etc/proftpd/proftpd.conf
 ajouter:
@@ -85,24 +92,29 @@ HideFiles ^\\..*
 
 # autoban bruteforce/ddos
 http://blog.nicolargo.com/2012/02/proteger-son-serveur-en-utilisant-fail2ban.html
+```
 apt-get install fail2ban
 ne /etc/fail2ban/jail.conf:
     chercher [ssh] puis rajouter:
         action = iptables[name=SSH, port=ssh, protocol=tcp]
         maxretry = 3 (au lieu de 6)
         bantime = 900 (en secondes)
+```
 
 # configurer mail server
 https://www.isalo.org/wiki.debian-fr/Installation_sur_une_Squeeze_d'un_serveur_mail_complet_(Postfix_Postfixadmin_Dovecot_Mysql_Amavisd-new_Spamassassin_Clamav_Postgrey_Squirrelmail_Roundcube)_avec_gestion_des_filtres_Imap_et_des_quotas
 
+```
 apt-get install -y mysql-server
 ne /etc/bind/db.mynas -->
 smtp            IN      A       10.10.100.24
 mynas.         IN      MX      10      smtp
-
+```
 
 # configurer control panel (ajenti)
+```
 wget -O- https://raw.github.com/Eugeny/ajenti/master/scripts/install-debian.sh | sh
+```
 changer password
 aller dans plugings: installer ctdb
                      installer S.M.A.R.T.
@@ -116,32 +128,51 @@ http://www.linux-france.org/article/serveur/samba-mhp/smb-conf.htm
 http://www.commentcamarche.net/contents/1027-mise-en-place-de-samba-sous-linux
 
 # configurer quota:
+```
 apt-get install -y quota libnet-ldap-perl
-ne /etc/fstab --> la ligne ou y'a mynas (derniere normalement) changer defaults par defaults,usrquota
+emacs /etc/fstab --> la ligne ou y'a mynas (derniere normalement) changer defaults par defaults,usrquota
+```
 (reboot ou mount -o remount /mynas)
+```
 setquota -u antoine 500000 500000 0 0 /dev/sdb1; setquota -u papy 500000 500000 0 0 /dev/sdb1; setquota -u zouhir 500000 500000 0 0 /dev/sdb1; setquota -u admin 1000000 1000000 0 0 /dev/sdb1;
+```
 
 # configurer / installer transmission
 https://www.guillaume-leduc.fr/la-seedbox-facile-sous-debian-avec-transmission.html (methode sale / a chier)
 http://voidandany.free.fr/index.php/executer-transmission-avec-lutilisateur-de-son-choix-et-deplacer-son-fichier-de-configuration-vers-home/ (tres performant, je remercie l'auteur)
+
+```
 apt-get install -y transmission-deamon;
 service transmission-daemon stop;
-emacs /etc/default/transmission-daemon; --> commenter OPTIONS
+```
+```
+emacs /etc/default/transmission-daemon; --> commenter OPTIONS\
+```
+```
 emacs /etc/init.d/transmission-daemon; --> changer USER=debian.. par USER=admin
+```
+```
 mkdir -p ~/.config/transmission-daemon;
 cp /etc/transmission-daemon/settings.json ~/.config/transmission-daemon/;
 chown admin:admin -R ~/.config;
-mkdir /mynas/admin/downloads
+mkdir /mynas/admin/downloads```
+```
+```
 emacs ~/.config/transmission-daemon/settings.json; -->
   "download-dir": "/mynas/admin/downloads"
   "rpc-enabled": true
   "rpc-password": "tonpassword"
   "rpc-username": "admin ou ce que tu veux"
   "rpc-whitelist-enabled": false
+```
 
 # configurer subsonic
 http://www.subsonic.org/pages/installation.jsp#debian
+
+```
 apt-get install openjdk-7-jre; wget http://downloads.sourceforge.net/project/subsonic/subsonic/5.2.1/subsonic-5.2.1.deb?r=http%3A%2F%2Fwww.subsonic.org%2Fpages%2Fdownload2.jsp%3Ftarget%3Dsubsonic-5.2.1.deb&ts=1432778765&use_mirror=vorboss && mv subsonic-5.2.1.deb?r=http:%2F%2Fwww.subsonic.org%2Fpages%2Fdownload2.jsp?target=subsonic-5.2.1.deb&ts=1432778765&use_mirror=vorboss subsonic.deb && sudo dpkg -i subsonic.deb;
+```
+
 changer reglages / parametres en fonction des gouts
 
 # subdomain / virtualhost
@@ -152,10 +183,16 @@ pour chaque virtualhost creer un fichier, voici ma liste:
 
 # h5ai
 http://yaui.me/how-to-set-up-apache-and-h5ai-in-raspi/
-apt-get install -y apache2-doc apache2-utils libapache2-mod-php5 php5 php-pear php5-xcache php5-mysql mysql-server mysql-client
-suivre le tuto sauf pour le Vhost, ne pas mettre le Directory Index ... mais:
-emacs /etc/apache2/mods-available/dir.conf puis rajouter /_h5ai/server/php/index.php
 
+```
+apt-get install -y apache2-doc apache2-utils libapache2-mod-php5 php5 php-pear php5-xcache php5-mysql mysql-server mysql-client
+```
+
+suivre le tuto sauf pour le Vhost, ne pas mettre le Directory Index ... mais:
+
+```
+emacs /etc/apache2/mods-available/dir.conf puis rajouter /_h5ai/server/php/index.php
+```
 
 # git-server
 https://www.digitalocean.com/community/tutorials/how-to-install-git-on-debian-7
